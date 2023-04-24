@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #4c482e;
+    --second-bg-color: #d0bdaa;
+    --font-color: #fff;
+    --light-color: #899fb6;
+    --dark-color: #425164;
+}
+
+/* whole app design */
+body {
+    background: var(--bg-color);
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* search bar */
+.search-btn {
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+
+.text {
+    opacity: 0.8;
+}
+
+/* container */
+.container {
+    min-height: 100vh;
+}
+
+.meal-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.meal-search {
+    margin: 2rem 0;
+}
+
+.meal-search-box {
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-content,
+.search-btn {
+    width: 100%;
+}
+
+.search-content {
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    outline: 0;
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.search-content::placeholder {
+    color: var(--dark-color);
+}
+
+.search-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: var(--light-color);
+    color: var(--font-color);
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 0.4s linear;
+}
+
+.search-btn:hover {
+    background: var(--dark-color);
+}
+
+.meal-result {
+    margin-top: 4rem;
+}
+
+#meal {
+    margin: 2.4rem 0;
+}
+
+.meal-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0,0,0,0.79);
+    margin: 2rem 0;
+}
+
+.meal-img img {
+    width: 100%;
+    display: block;
+}
+
+.meal-name {
+    padding: 1.5rem 0.5rem;
+}
+
+.meal-name h3 {
+    font-size: 1.4rem;
+}

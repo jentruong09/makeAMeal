@@ -13,7 +13,36 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="meal-wrapper">
+            <div class="meal-search">
+                <h2 class="title">
+                    Find A Meal
+                </h2>
+                <div class="meal-search-box">
+                    <input type="text" class="search-content" placeholder="Enter an Ingredient" id="search-input">
+                    <button type="submit" class="search-btn" id="search-btn">
+                        <i class='bx bx-search'></i>
+                    </button>
+                </div>
+            </div>
+            <!-- placeholder for now -->
+            <div class="meal-result">
+                <h2 class="title">Your search Result:</h2>
+                <div id="meal">
+                    <div class="meal-item">
+                        <div class="meal-img">
+                            <img src="assets/image/pbj-sandwich.jpg" alt="food">
+                        </div>
+                        <div class="meal-name">
+                            <h3>Peanut Butter Sandwich</h3>
+                            <a href="#" class="recipe-btn">Get Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- js link -->
     <script src="assets/js/script.js"></script>
