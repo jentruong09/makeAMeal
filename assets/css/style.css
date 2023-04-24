@@ -97,6 +97,7 @@ body {
     background: var(--dark-color);
 }
 
+/* how meals populated will look like */
 .meal-result {
     margin-top: 4rem;
 }
@@ -123,4 +124,39 @@ body {
 
 .meal-name h3 {
     font-size: 1.4rem;
+}
+
+.recipe-btn {
+    text-decoration: none;
+    color: var(--font-color);
+    background-color: var(--light-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    transition: all 0.4s linear;
+}
+
+.recipe-btn:hover {
+    background-color: var(--dark-color);
+}
+
+/* media queries */
+@media screen and (min-width: 600px) {
+    .meal-search-box {
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #meal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
