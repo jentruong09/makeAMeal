@@ -144,6 +144,103 @@ body {
     background-color: var(--dark-color);
 }
 
+/* populated recipe design */
+.meal-detail {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--font-color);
+    background-color: var(--light-color);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+}
+
+.meal-detail::-webkit-scrollbar{
+    width: 10px
+}
+
+.meal-detail::-webkit-scrollbar-thumb {
+    background: #f0f0f0;
+    border-radius: 2rem;
+}
+
+.showRecipe{
+    display: block;
+}
+
+.meal-details-content {
+    margin: 2rem;
+}
+
+.meal-details-content p:not(.recipe-category) {
+    padding: 1rem 0;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: var(--font-color);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.recipe-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.recipe-category {
+    background: var(--font-color);
+    font-weight: 600;
+    color: var(--light-color);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.recipe-instruction {
+    padding: 1rem 0;
+}
+
+.recipe-meal-img img {
+    width: 300px;
+    height: 100%;
+    border-radius: 5%;
+    margin: 0 auto;
+    display: block;
+}
+
+.recipe-link {
+    margin: 1.4rem 0;
+}
+
+.recipe-link a {
+    color: var(--font-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.4s linear;
+}
+
+
+
+
+
+
+
+
 /* media queries */
 @media screen and (min-width: 600px) {
     .meal-search-box {
@@ -158,5 +255,17 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+    .meal-item {
+        margin: 0;
+    }
+    .meal-detail {
+        width: 700px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #meal {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
