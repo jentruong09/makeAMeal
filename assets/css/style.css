@@ -234,7 +234,13 @@ body {
     transition: all 0.4s linear;
 }
 
-
+.notFound {
+    grid-template-columns: 1fr!important;
+    color:var(--light-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
 
 
 
