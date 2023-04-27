@@ -2,6 +2,7 @@ const searchBtn = document.getElementById("search-btn");
 const mealList = document.getElementById("meal");
 const mealDetailsContent = document.querySelector(".meal-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
+const yourSearchResult = document.getElementById("your-search-result")
 
 searchBtn.addEventListener("click", getMealList);
 mealList.addEventListener("click", getMealRecipe);
@@ -10,16 +11,17 @@ recipeCloseBtn.addEventListener("click", () => {
 });
 
 // get meal list
-function getMealList(event) {
+function getMealList() {
     let searchInput = document.getElementById("search-input").value.trim();
-    event.preventDefault();
     //console.log(searchInput)
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
+        
         if(data.meals) {
             data.meals.forEach(meal => {
+                console.log(meal)
                 html += `
                 <div class="meal-item" data-id="${meal.idMeal}">
                     <div class="meal-img">
@@ -33,6 +35,7 @@ function getMealList(event) {
                 `
             });
             mealList.classList.remove('notFound')
+            yourSearchResult.style.display = "inline"
         } else {
             html="Sorry, we didn't find any meal matching the searched ingredient!"
             mealList.classList.add('notFound')
@@ -57,9 +60,27 @@ function getMealRecipe(event) {
 function mealRecipeModal(meal) {
     console.log(meal)
     meal = meal[0]
+    console.log(meal.strInstructions)
+
+    let count = 1;
+    let ingredients = [];
+    for (let i in meal) {
+        let ingredient = ""
+        let measure = ""
+        if(i.startsWith("strIngredient") && meal[i]) {
+            ingredient = meal[i]
+            measure = meal["strMeasure" + count];
+            count += 1
+            ingredients.push(`${measure} ${ingredient}`)
+        }
+    }
+    console.log(ingredients)
     let html = `
     <h2 class="recipe-title">${meal.strMeal}</h2>
     <p class="recipe-category">${meal.strCategory}</p>
+    <div class="recipe-ingredient" id="recipe-ingredient">
+        <h3>Ingredients Needed:</h3>
+    </div>
     <div class="recipe-instruction">
         <h3>Instructions:</h3>
         <p>${meal.strInstructions}</p>
@@ -73,4 +94,12 @@ function mealRecipeModal(meal) {
     `
     mealDetailsContent.innerHTML = html;
     mealDetailsContent.parentElement.classList.add('showRecipe');
+    let ingredientContent = document.getElementById("recipe-ingredient")
+    let parent = document.createElement("ul")
+    ingredients.forEach((i) => {
+        let child = document.createElement("li")
+        child.innerText = i
+        parent.appendChild(child)
+        ingredientContent.appendChild(parent)
+    })
 }
