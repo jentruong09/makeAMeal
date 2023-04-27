@@ -4,6 +4,7 @@ const mealDetailsContent = document.querySelector(".meal-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 const yourSearchResult = document.getElementById("your-search-result")
 
+// event listeners
 searchBtn.addEventListener("click", getMealList);
 mealList.addEventListener("click", getMealRecipe);
 recipeCloseBtn.addEventListener("click", () => {
@@ -37,6 +38,7 @@ function getMealList() {
             mealList.classList.remove('notFound')
             yourSearchResult.style.display = "inline"
         } else {
+            // 404 for meal search
             html="Sorry, we didn't find any meal matching the searched ingredient!"
             mealList.classList.add('notFound')
         }
@@ -56,12 +58,13 @@ function getMealRecipe(event) {
     }
 }
 
-// modal
+// for recipe to populate
 function mealRecipeModal(meal) {
     console.log(meal)
     meal = meal[0]
     console.log(meal.strInstructions)
 
+    // for measurement and ingredients to be together
     let count = 1;
     let ingredients = [];
     for (let i in meal) {
@@ -94,6 +97,7 @@ function mealRecipeModal(meal) {
     `
     mealDetailsContent.innerHTML = html;
     mealDetailsContent.parentElement.classList.add('showRecipe');
+    // populating the ingredients (already merged as string in array)
     let ingredientContent = document.getElementById("recipe-ingredient")
     let parent = document.createElement("ul")
     ingredients.forEach((i) => {

@@ -1,8 +1,8 @@
-/* for the body */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 /* for title */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* for the body */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 * {
     padding: 0;
@@ -121,7 +121,7 @@ body {
 }
 
 .meal-item {
-    border-radius: 1rem;
+    border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 4px 21px -12px rgba(0,0,0,0.79);
     margin: 2rem 0;
@@ -262,6 +262,7 @@ body {
     list-style-type: none;
 }
 
+/* 404 for searches */
 .notFound {
     grid-template-columns: 1fr!important;
     color:var(--light-color);
@@ -269,10 +270,6 @@ body {
     font-weight: 600;
     width: 100%;
 }
-
-
-
-
 
 
 /* media queries */
