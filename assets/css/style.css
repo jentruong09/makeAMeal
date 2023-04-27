@@ -246,7 +246,12 @@ body {
     color: var(--font-color);
     font-size: 1.3rem;
     font-weight: 600;
+    text-decoration: none;
     transition: all 0.4s linear;
+}
+
+.recipe-link a:hover {
+    color: var(--dark-color);
 }
 
 .recipe-ingredient h3{
@@ -271,7 +276,34 @@ body {
 
 
 /* media queries */
+@media (max-width: 750px) {
+    .meal-search h2.title {
+        font-size: 50px;
+    }    
+    
+}
+
+@media (max-width: 500px) {
+    .meal-search h2.title {
+        font-size: 40px;
+    }  
+}
+
+@media (max-width: 400px) {
+    .meal-search h2.title {
+        font-size: 30px;
+    }  
+}
+
+@media (max-width: 300px) {
+    .meal-search h2.title {
+        font-size: 20px;
+    }  
+}
+
 @media screen and (min-width: 600px) {
+    
+    
     .meal-search-box {
         width: 540px;
         margin-left: auto;
@@ -282,7 +314,7 @@ body {
 @media screen and (min-width: 768px) {
     #meal {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
     .meal-item {
@@ -295,6 +327,6 @@ body {
 
 @media screen and (min-width: 992px) {
     #meal {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
