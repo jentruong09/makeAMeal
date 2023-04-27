@@ -65,6 +65,10 @@ body {
     font-size: 80px;
 }
 
+.meal-search h2.title i {
+    color: var(--light-color);
+}
+
 .meal-search-box {
     margin: 1rem 0;
     height: 35px;
@@ -88,7 +92,7 @@ body {
 }
 
 .search-content::placeholder {
-    color: var(--dark-color);
+    color: var(--light-color);
 }
 
 .search-btn {
